@@ -1,4 +1,4 @@
 # Python_training
 
-#Version
+# Version
 ・python 3.6.5
