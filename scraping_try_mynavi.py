@@ -65,6 +65,8 @@ def fac_info():
       uRl = "None"
     ws["E"+str(num)] = str(uRl)
 
+    print(name + ' : ' + address)
+
     # nextページへのID取得
     next_factory = driver.find_element_by_id('next')
     try:
@@ -89,8 +91,10 @@ driver.get("https://job.mynavi.jp/21/pc/login?func=PCtop")
 #--------------[ドライバーの指定/r]---------------------
 
 login(myId, myPass, input_index) #mynavi login
+print("マイナビにログインしました")
 
 search(category) #業種search
+print(category + ' をサーチしました')
 
 # 企業ページオープン
 factory_name = driver.find_element_by_id('corpNameLink[0]')
@@ -101,6 +105,8 @@ handle_array = driver.window_handles
 driver.switch_to.window(handle_array[1])
 
 fac_info() #ループ処理
+
+input("何か文字を入力してください")
 
 # タブクローズ
 driver.close()
